@@ -10,3 +10,5 @@ currentSVG.addEventListener("click", () => {
   sideBarElement.classList.add("show");
   alert("funciona");
 });
+
+// corrigir esse codigo
