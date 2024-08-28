@@ -1,14 +1,17 @@
+const currentSVG = document.querySelector("#threeDots");
 const CreateSideBarElement = () => {
   const sideBarElement = document.createElement("div");
   sideBarElement.setAttribute("class", "sideBarElement hidden");
-  const currentSVG = document.querySelector("#threeDots");
-  document.body.insertBefore(sideBarElement, currentSVG);
+  document.body.appendChild(sideBarElement);
+
+  // Retorna o elemento criado para uso externo
+  return sideBarElement;
 };
 
-window.addEventListener("DOMContentLoaded", CreateSideBarElement());
-currentSVG.addEventListener("click", () => {
-  sideBarElement.classList.add("show");
-  alert("funciona");
-});
+window.addEventListener("DOMContentLoaded", () => {
+  const sideBarElement = CreateSideBarElement(); // Cria o elemento e obtém referência a ele
 
-// corrigir esse codigo
+  currentSVG.addEventListener("click", () => {
+    sideBarElement.classList.toggle("show"); // Alterna a classe 'show'
+  });
+});
